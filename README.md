@@ -51,14 +51,14 @@ Function to compute the essential matrix E given F, K1 and K2 is written with th
 
 Given an essential matrix, it is possible to retrieve the projective camera matrices M1 and M2
 from it. Assuming M1 is fixed at [I; 0], M2 can be retrieved up to a scale and four-fold rotation
-ambiguity. The M1 and M2 here are projection matrices of the form: M1 = Ij0 and M2 = Rjt.
+ambiguity. The M1 and M2 here are projection matrices.
 
 Function to triangulate a set of 2D coordinates in the image to a set of 3D points has the signature:
 ```[P, err] = triangulate(C1, pts1, C2, pts2)```  
 where pts1 and pts2 are the N ×2 matrices with the 2D image coordinates and P is an N ×3 matrix
 with the corresponding 3D points per row. C1 and C2 are the 3 × 4 camera matrices. We multiply the given intrinsics matrices with your solution for the canonical camera matrices to obtain the final camera matrices
 
-For each point i, we want to solve for 3D coordinates Pi = xi; yi; ziT , such that when they are projected back to the two images, they are close to the original 2D points. To project the 3D coordinates back to 2D images, we first write Pi in homogeneous coordinates, and compute C1Pi and C2Pi to obtain the 2D homogeneous coordinates projected to camera 1 and camera 2, respectively.
+For each point i, we want to solve for 3D coordinates Pi , such that when they are projected back to the two images, they are close to the original 2D points. To project the 3D coordinates back to 2D images, we first write Pi in homogeneous coordinates, and compute C1Pi and C2Pi to obtain the 2D homogeneous coordinates projected to camera 1 and camera 2, respectively.
 
 For each point i, we can write this problem in the following form:
 AiPi = 0;   
