@@ -13,12 +13,12 @@ Figure 3: Temple images for this assignment
 Figure 4: displayEpipolarF in helper.py creates a GUI for visualizing epipolar lines
 
 
-# 2 Fundamental matrix estimation
+# 2 Fundamental matrix estimation  
 
 In this section you will explore different methods of estimating the fundamental matrix given a pair
 of images. In the data/ directory, you will find two images which is used to evaluate the performance of modern 3D reconstruction algorithms.
 
-**The Eight Point Algorithm**   
+**The Eight Point Algorithm**     
 The 8-point algorithm is arguably the simplest method for estimating the fundamental matrix. We use correspondences from data/some corresp.npz.
 We implement Function ```F = eightpoint(pts1, pts2, M)```   
 where pts1 and pts2 are N × 2 matrices corresponding to the (x; y) coordinates of the N points
@@ -32,7 +32,7 @@ Some tips:
 
 ![1](/results/1.png)
 
-**The Seven Point Algorithm**   
+**The Seven Point Algorithm**    
 
 Since the fundamental matrix only has seven degrees of freedom, it is possible to calculate F using only seven point correspondences. This requires solving a polynomial equation. We Manually select 7 points from  points in
 data/some corresp.npz, and use these points to recover a fundamental matrix F. The function
@@ -42,9 +42,9 @@ where pts1 and pts2 are 7 × 2 matrice s containing the correspondences and M is
 
 The algorithm is sensitive to small changes in the point correspondences. We may want to try with different sets of matches.
 
-# 3d Reconstruction
+# 3d Reconstruction   
 
-**Metric Reconstruction**
+**Metric Reconstruction**    
 We compute the camera matrices and triangulate the 2D points to obtain the 3D scene structure. To obtain the Euclidean scene structure, we first convert the fundamental matrix F to an essential matrix E. Camera calibration matrices K1 and K2 are known; these are provided in data/intrinsics.npz.
 
 Function to compute the essential matrix E given F, K1 and K2 is written with the signature:
@@ -66,7 +66,7 @@ AiPi = 0;
 where Ai is a 4×4 matrix, and Pi is a 4×1 vector of the 3D coordinates in the homogeneous form. Then, we can obtain the homogeneous least-squares solution (discussed in class) to solve for each Pi.
 
 
-**3D Visualization**
+**3D Visualization**    
 We create a 3D visualization of the temple images. By treating our two images as a stereo-pair, we can triangulate corresponding points in each image, and render their 3D locations.
 
 Function with the signature:
