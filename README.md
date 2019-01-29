@@ -108,4 +108,7 @@ where x is the flattened concatenation of P, r2, and t2. P are the 3D points; r2
 residuals = numpy.concatenate([(p1-p1 hat).reshape([-1]),
 (p2-p2 hat).reshape([-1])])
 We use this error function and Scipy’s nonlinear least square optimizer leastsq write a function to optimize for the best extrinsic matrix and 3D points using the inlier correspondences from some corresp noisy.npz and the RANSAC estimate of the extrinsics and 3D points as an initialization.   
-```[M2, P] = bundleAdjustment(K1, M1, p1, K2, M2 init, p2, P init)```   
+```[M2, P] = bundleAdjustment(K1, M1, p1, K2, M2 init, p2, P init)```
+
+![3](/results/3.png)
+
