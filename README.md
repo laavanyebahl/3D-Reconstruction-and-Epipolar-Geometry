@@ -16,7 +16,7 @@ Figure 4: displayEpipolarF in helper.py creates a GUI for visualizing epipolar l
 # 2 Fundamental matrix estimation
 
 In this section you will explore different methods of estimating the fundamental matrix given a pair
-of images. In the data/ directory, you will find two images (see Figure 3) from the Middlebury multiview dataset1, which is used to evaluate the performance of modern 3D reconstruction algorithms.
+of images. In the data/ directory, you will find two images which is used to evaluate the performance of modern 3D reconstruction algorithms.
 
 **The Eight Point Algorithm**   
 The 8-point algorithm is arguably the simplest method for estimating the fundamental matrix. We use correspondences from data/some corresp.npz.
@@ -30,6 +30,7 @@ Some tips:
 * Eight-point is just a figurative name, it just means that you need at least 8 points; our algorithm should use an over-determined system (N > 8 points).
 * To visualize the correctness of your estimated F, we use the supplied function displayEpipolarF in helper.py, which takes in F, and the two images. This GUI lets you select a point in one of the images and visualize the corresponding epipolar line in the other image.
 
+![1](/results/1.png)
 
 **The Seven Point Algorithm**   
 
@@ -83,6 +84,8 @@ To help test our epipolarCorrespondence,there is a helper function epipolarMatch
 It’s not necessary for your matcher to get every possible point right, but it should get easy points (such as those with distinctive, corner-like windows).
 
 These 3D point locations can then plotted using the Matplotlib or plotly package.
+
+![2](/results/2.png)
 
 
 **Bundle Adjustment**
