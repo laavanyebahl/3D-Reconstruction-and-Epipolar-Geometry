@@ -13,7 +13,7 @@ Figure 3: Temple images for this assignment
 Figure 4: displayEpipolarF in helper.py creates a GUI for visualizing epipolar lines
 
 
-# 2 Fundamental matrix estimation  
+**2 Fundamental matrix estimations**     
 
 In this section you will explore different methods of estimating the fundamental matrix given a pair
 of images. In the data/ directory, you will find two images which is used to evaluate the performance of modern 3D reconstruction algorithms.
